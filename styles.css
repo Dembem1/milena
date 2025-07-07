@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
   position: relative;
   margin: 0;
-  background-color: #f7f4fb; /* пастельный сиреневый */
+  background-color: #dfd4ed; /* пастельный сиреневый */
   color: #5a5a5a;
 }
 
@@ -91,7 +91,7 @@ body {
   height: 0;
   border-left: 160px solid transparent;
   border-right: 160px solid transparent;
-  border-bottom: 110px solid #dfd8ed; /* светло-сиреневый */
+  border-bottom: 110px solid #e0d4f7; /* светло-сиреневый */
   /* Убираем border-radius, чтобы крышка была ровной */
   border-radius: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
