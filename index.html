@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>С Днем Рождения!</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Конфетти контейнер -->
+  <canvas id="confetti"></canvas>
 
   <!-- Боковые гифки -->
   <div class="side-gif left">
-    <img src="https://media.giphy.com/media/3oz8xsaLjLVqVXr3tS/giphy.gif" alt="GIF 1">
+    <img src="https://media.giphy.com/media/3oz8xsaLjLVqVXr3tS/giphy.gif" alt="GIF 1" />
   </div>
   <div class="side-gif right">
-    <img src="https://media.giphy.com/media/CY5RNbG7J8koM/giphy.gif" alt="GIF 2">
+    <img src="https://media.giphy.com/media/CY5RNbG7J8koM/giphy.gif" alt="GIF 2" />
   </div>
 
   <!-- Контейнер открытки -->
   <div class="container">
     <div class="envelope-container" id="envelope">
-      <div class="envelope-body"></div>
       <div class="envelope-flap" id="flap"></div>
-      <button class="open-btn" onclick="openEnvelope()">Открой меня 🎁</button>
+      <div class="envelope-body"></div>
+      <button class="open-btn" id="openBtn">Открой меня 🎁</button>
     </div>
   </div>
 
@@ -28,15 +31,15 @@
   <div class="card" id="card">
     <h2>С Днем Рождения, милая подруга! 💖</h2>
     <p class="message">
-      Пусть твоя жизнь будет как сказка: яркая, волшебная и вкусная!<br>
+      Пусть твоя жизнь будет как сказка: яркая, волшебная и вкусная!<br />
       Ты чудо, и я счастлива, что ты есть! 🌈🎉
     </p>
-    <img src="assets/ВАША_ГИФ_ИЛИ_ФОТО.gif" alt="Поздравление">
+    <img src="assets/ВАША_ГИФ_ИЛИ_ФОТО.gif" alt="Поздравление" />
     <p class="message">С любовью! 💌</p>
   </div>
 
   <!-- Слой для клика на фон -->
-  <div class="overlay" id="overlay" onclick="closeCard()"></div>
+  <div class="overlay" id="overlay"></div>
 
   <script src="script.js"></script>
 </body>
