@@ -3,189 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>С Днем Рождения!</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Comic Sans MS', cursive;
-      background: linear-gradient(135deg, #d8c5ff, #b8f3e1, #cde9ff);
-      overflow: hidden;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1;
-    }
-
-    .envelope-container {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      background: #cba6f7;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .envelope-top {
-      position: absolute;
-      top: -50px;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: #b18df0;
-      clip-path: polygon(0 100%, 50% 0, 100% 100%);
-      transition: transform 0.6s ease;
-      transform-origin: top;
-      z-index: 3;
-    }
-
-    .open-btn {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      background-color: #91e4c4;
-      border: none;
-      border-radius: 20px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 4;
-    }
-
-    .card {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 340px;
-      max-width: 90%;
-      background: #ffffffee;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      padding: 25px 20px;
-      text-align: center;
-      z-index: 10;
-      animation: fadeIn 0.8s ease forwards;
-    }
-
-    .card img {
-      width: 80%;
-      margin-top: 15px;
-      border-radius: 12px;
-    }
-
-    .message {
-      font-size: 18px;
-      color: #5e3480;
-      margin-top: 15px;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translate(-50%, -60%);
-      }
-      100% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    /* Конфетти */
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: red;
-      animation: fall linear infinite;
-      opacity: 0.8;
-      border-radius: 50%;
-      z-index: 0;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10px) rotate(0deg);
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="container">
-  <div class="envelope-container" id="envelope">
-    <div class="envelope-top" id="flap"></div>
-    <button class="open-btn" onclick="openEnvelope()">Открой меня 🎁</button>
+  <!-- Боковые гифки -->
+  <div class="side-gif left">
+    <img src="assets/gif1.gif" alt="GIF 1">
   </div>
-</div>
+  <div class="side-gif right">
+    <img src="assets/gif2.gif" alt="GIF 2">
+  </div>
 
-<div class="card" id="card">
-  <h2>С Днем Рождения, милая подруга! 💖</h2>
-  <p class="message">
-    Пусть каждый день будет полон радости, любви, вкусняшек и волшебства! ✨<br>
-    Ты как радуга — всегда добавляешь цвета в этот мир 🌈<br>
-    Обожаю тебя! 😘
-  </p>
+  <!-- Контейнер открытки -->
+  <div class="container">
+    <div class="envelope-container" id="envelope">
+      <div class="envelope-body"></div>
+      <div class="envelope-flap" id="flap"></div>
+      <button class="open-btn" onclick="openEnvelope()">Открой меня 🎁</button>
+    </div>
+  </div>
 
-  <!-- Место для гифки или фото -->
-  <img src="ВАШ_ПУТЬ_К_ГИФКЕ.gif" alt="Твоя картинка">
+  <!-- Поздравительная карточка -->
+  <div class="card" id="card">
+    <h2>С Днем Рождения, милая подруга! 💖</h2>
+    <p class="message">
+      Пусть твоя жизнь будет как сказка: яркая, волшебная и вкусная!<br>
+      Ты чудо, и я счастлива, что ты есть! 🌈🎉
+    </p>
+    <img src="assets/ВАША_ГИФ_ИЛИ_ФОТО.gif" alt="Поздравление">
+    <p class="message">С любовью! 💌</p>
+  </div>
 
-  <p class="message">Ты заслуживаешь всё самое чудесное! 💐🎉</p>
-</div>
+  <!-- Слой для клика на фон -->
+  <div class="overlay" id="overlay" onclick="closeCard()"></div>
 
-<script>
-  function openEnvelope() {
-    const flap = document.getElementById('flap');
-    const card = document.getElementById('card');
-    flap.style.transform = 'rotateX(180deg)';
-    setTimeout(() => {
-      card.style.display = 'block';
-    }, 600);
-  }
-
-  function createConfetti() {
-    for (let i = 0; i < 60; i++) {
-      const confetti = document.createElement("div");
-      confetti.classList.add("confetti");
-      confetti.style.left = Math.random() * 100 + "vw";
-      confetti.style.backgroundColor = randomColor();
-      confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
-      confetti.style.width = confetti.style.height = (6 + Math.random() * 6) + "px";
-      confetti.style.top = "-10px";
-      document.body.appendChild(confetti);
-
-      setTimeout(() => confetti.remove(), 7000);
-    }
-  }
-
-  function randomColor() {
-    const colors = ["#fcb1ff", "#b8f3e1", "#cde9ff", "#f5c7ff", "#a3f7bf", "#d1bfff"];
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
-
-  window.onload = () => {
-    createConfetti();
-  };
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
