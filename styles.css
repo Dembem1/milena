@@ -17,11 +17,12 @@ html, body {
 
 /* Конверт */
 .envelope-container {
-  position: relative;
+  position: relative; /* важно! */
   width: 300px;
-  height: 180px;
-  perspective: 1000px;
+  height: 200px;
+  margin: 0 auto;
 }
+
 
 .envelope-body {
   width: 100%;
@@ -50,9 +51,9 @@ html, body {
 
 .open-btn {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 20px); /* немного ниже */
   padding: 12px 24px;
   background-color: #91e4c4;
   border: none;
