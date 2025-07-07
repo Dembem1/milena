@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
   position: relative;
   margin: 0;
-  background-color: #dfd4ed; /* пастельный сиреневый */
+  background-color: #ccbae4; /* пастельный сиреневый */
   color: #5a5a5a;
 }
 
@@ -161,7 +161,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(75, 58, 107, 0.4);
+  background: rgba(147, 114, 209, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
