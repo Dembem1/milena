@@ -94,7 +94,7 @@ body {
   border-bottom: 110px solid #dfd8ed; /* светло-сиреневый */
   /* Убираем border-radius, чтобы крышка была ровной */
   border-radius: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.005);
   transition: transform 0.6s ease;
   transform-origin: bottom center;
 }
