@@ -51,9 +51,9 @@ html, body {
 
 .open-btn {
   position: absolute;
-  top: 105%;
   left: 50%;
-  transform: translateX(-50%);
+  top: 100%; /* размещаем прямо под конвертом */
+  transform: translate(-50%, 10px); /* немного ниже */
   padding: 10px 20px;
   background-color: #91e4c4;
   border: none;
