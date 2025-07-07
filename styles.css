@@ -8,12 +8,11 @@ html, body {
 }
 
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  z-index: 1;
-  position: relative;
 }
 
 /* Конверт */
@@ -51,16 +50,17 @@ html, body {
 
 .open-btn {
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: 100%; /* размещаем прямо под конвертом */
-  transform: translate(-50%, 10px); /* немного ниже */
-  padding: 10px 20px;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
   background-color: #91e4c4;
   border: none;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Поздравительная открытка */
