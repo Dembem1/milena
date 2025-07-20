@@ -19,7 +19,7 @@ function closeCard() {
   envelope.querySelector('.envelope-body').style.transform = '';
   card.classList.remove('show');
   overlay.classList.remove('show');
-  openBtn.style.display = 'block';
+  openBtn.style.display = 'inline-block';
 }
 
 openBtn.addEventListener('click', openEnvelope);
